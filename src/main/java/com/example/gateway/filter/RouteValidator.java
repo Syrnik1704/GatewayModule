@@ -14,6 +14,7 @@ public class RouteValidator {
             "/auth/validate"
     );
 
+    // can be renamed to needToBeSecured
     public Predicate<ServerHttpRequest> isSecure = request -> openApiEndpoints.stream()
             .noneMatch(uri -> request.getURI().getPath().contains(uri));
 }
