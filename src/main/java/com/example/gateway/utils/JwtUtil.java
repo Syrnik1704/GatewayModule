@@ -15,6 +15,7 @@ public class JwtUtil {
     public JwtUtil(@Value("${jwt.secret") String secret) {
         SECRET = secret;
     }
+
     public void validateToken(final String token) {
         Jwts.parserBuilder().setSigningKey(getSignKey()).build().parseClaimsJws(token);
     }
